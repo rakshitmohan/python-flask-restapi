@@ -1,0 +1,30 @@
+name: Some workflow
+on:
+    pull_request:
+        branches: [master, main]
+jobs:
+  SonarScanner:
+    runs-on: ubuntu-latest
+    name: Sonar Scanner
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: yarn install --production=false
+      - name: Scan code
+        uses: vtex/action-sonarqube@main
+        with:
+          
+          host: ${{ secrets.SQHost }} # Variable set in the Github Secrets
+          token: ${{ secrets.SQToken }} # Variable set in the Github Secrets
+          githubToken: ${{ secrets.GITHUB_TOKEN }} #required
+          host: ${{ secrets.SQHost }} # required
+          token: ${{ secrets.SQToken }} # required
+          projectKey: "test1"
+          projectName: "test1"
+          lintReport:  "report-json" 
+          
+          
+          
