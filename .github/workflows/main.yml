@@ -1,7 +1,7 @@
 on:
   # Trigger analysis when pushing in master or pull requests, and when creating
   # a pull request. 
-  push:
+  push: dfdfdfd
     branches:
       - master
       - main
