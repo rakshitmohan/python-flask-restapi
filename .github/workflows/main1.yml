@@ -21,7 +21,7 @@ jobs:
            githubToken: ${{ secrets.GITHUB_TOKEN }}
            projectKey: "test1"
            projectName: "test1"
-           lintReport:  "report-json" 
+ 
           
           
           
