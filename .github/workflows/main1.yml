@@ -16,15 +16,12 @@ jobs:
       - name: Scan code
         uses: vtex/action-sonarqube@main
         with:
-          
-          host: ${{ secrets.SQHost }} # Variable set in the Github Secrets
-          token: ${{ secrets.SQToken }} # Variable set in the Github Secrets
-          githubToken: ${{ secrets.GITHUB_TOKEN }} #required
-          host: ${{ secrets.SQHost }} # required
-          token: ${{ secrets.SQToken }} # required
-          projectKey: "test1"
-          projectName: "test1"
-          lintReport:  "report-json" 
+           host: ${{ secrets.SONARQUBE_HOST }}
+           token: ${{ secrets.SONARQUBE_TOKEN }}
+           githubToken: ${{ secrets.GITHUB_TOKEN }}
+           projectKey: "test1"
+           projectName: "test1"
+           lintReport:  "report-json" 
           
           
           
